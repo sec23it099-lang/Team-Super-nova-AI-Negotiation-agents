@@ -40,3 +40,9 @@ The system uses 🤖 LLaMA 3.1:8B to create interactive chat experiences where h
 
 👥 Team  
 Team Name: Super nova
+
+Team Members :
+1. Manoj J
+2. Arul Dhass
+3. Anbarasan M
+ 
