@@ -1,0 +1,69 @@
+🌟 Super Nova Negotiation Framework 🌟
+
+This document outlines the reasoning, structure, and tactics behind the AI Negotiation Agents project.  
+The aim is to replicate authentic buyer–seller bargaining, where agents follow distinct personalities and adjust their behavior dynamically.
+
+------------------------------------------------------------
+
+🎯 Main Goal
+To create a lifelike negotiation experience where:
+- Each side has a unique character style (confident, flexible, firm, or profit-driven).
+- Negotiation tactics shift over time as rounds progress.
+- Agents can decide whether to close the deal or end without agreement based on their constraints.
+
+------------------------------------------------------------
+
+🏛 Guiding Principles
+1. Clear Separation → Different modules for Buyer, Seller, and Negotiation loop.  
+2. Customizable Traits → Personalities defined through attributes like tone, patience, and thresholds.  
+3. Round Progression → Interactions unfold step by step, with early, middle, and final phase tactics.  
+4. Smart Adjustments → Responses adapt depending on previous offers and context.  
+5. Result Tracking → Final outcome includes both price metrics and conversation history.  
+6. Patience Estimation Layer → Opponent’s pace of concession is analyzed and influences counteroffers.  
+
+------------------------------------------------------------
+
+⚖ Negotiation Dynamics
+
+Role    | Focus            | Early Game          | Middle Game             | End Game
+--------|-----------------|---------------------|-------------------------|--------------------------
+Buyer   | Cost control    | Starts low          | Gradually increases     | Willing to stretch if within budget
+Seller  | Value protection| Sets high anchor    | Steps down moderately   | May grant final concession
+Shared  | Patience reading| Small moves if calm | Larger moves if urgent  | Push for closure
+
+------------------------------------------------------------
+
+🔄 Negotiation Cycle
+1. Setup  
+   - Define product, constraints, and round cap.  
+   - Load character traits for Buyer and Seller.  
+
+2. Offer Exchange  
+   - Seller makes initial price pitch.  
+   - Buyer responds with counter tied to fair price and budget.  
+
+3. Patience Reading  
+   - Track how much and how often offers shift.  
+   - If moves are small and slow → opponent is patient, so respond cautiously.  
+   - If moves are sudden and large → opponent is eager, so concede faster to secure deal.  
+
+4. Decision Phase  
+   - If proposal fits within acceptable bounds → confirm agreement.  
+   - If not → continue to next round.  
+
+5. End Conditions  
+   - Deal locked → log price and savings.  
+   - Limits exceeded → declare “no deal.”  
+   - Round cap reached → negotiation ends automatically.  
+
+------------------------------------------------------------
+
+📊 Sample Walkthrough  
+Scenario: Trading for premium fruit (round limit = 10, market base = ₹500).  
+
+- Round 1 → Seller opens at ₹690, Buyer replies ₹400.  
+- Round 3 → Buyer increases slowly to ₹410 → Seller interprets patience, lowers only slightly to ₹680.  
+- Round 5 → Buyer jumps to ₹450 → Seller interprets urgency, drops sharply to ₹600.  
+- Round 8 → Buyer at ₹470, Seller at ₹480 → Agreement is struck at mid-ground.  
+
+------------------------------------------------------------
